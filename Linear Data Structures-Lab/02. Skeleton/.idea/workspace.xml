@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ded532aa-8a84-4ff2-a920-946a4f392759" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/.idea/src.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/implementations/Stack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implementations/Stack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/implementations/Stack.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/implementations/Stack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/BenchmarkList" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/META-INF/BenchmarkList" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/implementations/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implementations/Queue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/implementations/Queue.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/implementations/Queue.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,14 +46,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
-  <component name="RunManager" selected="JUnit.StackTest">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="LinearDS" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.QueueTest">
     <configuration name="ArrayListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LinearDS" />
       <extension name="coverage">
@@ -72,8 +62,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArrayListTest.testContainsReturnFalseForEmptyList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="LinearDS" />
+    <configuration name="QueueTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="02. Skeleton" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="implementations.*" />
@@ -81,15 +71,30 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="implementations" />
-      <option name="MAIN_CLASS_NAME" value="implementations.ArrayListTest" />
-      <option name="METHOD_NAME" value="testContainsReturnFalseForEmptyList" />
+      <option name="MAIN_CLASS_NAME" value="implementations.QueueTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QueueTest.testIteratorShouldTraversItemsFromBeginToEnd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="02. Skeleton" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="implementations.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="implementations" />
+      <option name="MAIN_CLASS_NAME" value="implementations.QueueTest" />
+      <option name="METHOD_NAME" value="testIteratorShouldTraversItemsFromBeginToEnd" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArrayListTest.testContainsReturnTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="LinearDS" />
+    <configuration name="QueueTest.testPeekShouldReturnAndNotRemove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="02. Skeleton" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="implementations.*" />
@@ -97,8 +102,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="implementations" />
-      <option name="MAIN_CLASS_NAME" value="implementations.ArrayListTest" />
-      <option name="METHOD_NAME" value="testContainsReturnTrue" />
+      <option name="MAIN_CLASS_NAME" value="implementations.QueueTest" />
+      <option name="METHOD_NAME" value="testPeekShouldReturnAndNotRemove" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -121,11 +126,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.QueueTest" />
+        <item itemvalue="JUnit.QueueTest.testIteratorShouldTraversItemsFromBeginToEnd" />
+        <item itemvalue="JUnit.QueueTest.testPeekShouldReturnAndNotRemove" />
         <item itemvalue="JUnit.StackTest" />
         <item itemvalue="JUnit.ArrayListTest" />
-        <item itemvalue="JUnit.ArrayListTest.testContainsReturnFalseForEmptyList" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.ArrayListTest.testContainsReturnTrue" />
       </list>
     </recent_temporary>
   </component>
@@ -139,12 +144,26 @@
       <updated>1668374151736</updated>
       <workItem from="1668374160234" duration="2259000" />
       <workItem from="1668457025161" duration="6140000" />
-      <workItem from="1668546372493" duration="1870000" />
+      <workItem from="1668546372493" duration="3252000" />
+      <workItem from="1668624116660" duration="2135000" />
+      <workItem from="1668628568873" duration="2508000" />
     </task>
+    <task id="LOCAL-00001" summary="Stack implementation using Node.">
+      <created>1668548307424</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1668548307425</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Stack implementation using Node." />
+    <option name="LAST_COMMIT_MESSAGE" value="Stack implementation using Node." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -157,6 +176,11 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/implementations/QueueTest.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
