@@ -7,10 +7,12 @@ import java.util.Iterator;
 public class DoublyLinkedList<E> implements LinkedList<E> {
     private Node<E> head;
     private int size;
+    private Node<E> tail;
 
     private static class Node<E> {
         private E element;
         private Node<E> next;
+        private Node<E> previous;
 
         public Node(E value) {
             this.element = value;
@@ -23,24 +25,29 @@ public class DoublyLinkedList<E> implements LinkedList<E> {
     @Override
     public void addFirst(E element) {
         Node<E> newNode = new Node<>(element);
-        if (this.head != null) {
-            newNode.next = this.head;
+        if (this.size == 0) {
+            this.head = this.tail = newNode;
         }
+        Node<E> currentHead = this.head;
         this.head = newNode;
+        this.head.previous = null;
+        this.head.next = currentHead;
+        currentHead.previous = this.head;
+
         this.size++;
     }
 
     @Override
     public void addLast(E element) {
         Node<E> newNode = new Node<>(element);
-        if (this.head == null) {
-            this.head = newNode;
+        if (this.size == 0) {
+            this.addFirst(element);
         } else {
-            Node<E> current = this.head;
-            while (current.next != null) {
-                current = current.next;
-            }
-            current.next = newNode;
+            Node<E> currentTail = this.tail;
+            newNode.previous = currentTail;
+            currentTail.next = newNode;
+            this.tail = newNode;
+
         }
         this.size++;
     }
@@ -79,7 +86,7 @@ public class DoublyLinkedList<E> implements LinkedList<E> {
             prev = current;
             current = current.next;
         }
-        E element =  current.element;
+        E element = current.element;
         prev.next = null;
         this.size--;
 
