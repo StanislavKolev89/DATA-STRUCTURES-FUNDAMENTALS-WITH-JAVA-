@@ -76,18 +76,13 @@ public class DoublyLinkedList<E> implements LinkedList<E> {
     @Override
     public E removeLast() {
         ensureNotEmpty();
+        E element = this.tail.element;
         if (this.size == 1) {
             return removeFirst();
         }
+        this.tail=this.tail.previous;
+        this.tail.next=null;
 
-        Node<E> current = this.head;
-        Node<E> prev = this.head;
-        while (current.next != null) {
-            prev = current;
-            current = current.next;
-        }
-        E element = current.element;
-        prev.next = null;
         this.size--;
 
         return element;
