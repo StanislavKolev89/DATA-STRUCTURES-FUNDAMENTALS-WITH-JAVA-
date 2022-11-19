@@ -41,14 +41,14 @@ public class DoublyLinkedList<E> implements LinkedList<E> {
     public void addLast(E element) {
         Node<E> newNode = new Node<>(element);
         if (this.size == 0) {
-            this.addFirst(element);
+            this.head = this.tail = newNode;
         } else {
             Node<E> currentTail = this.tail;
             newNode.previous = currentTail;
             currentTail.next = newNode;
             this.tail = newNode;
-
         }
+
         this.size++;
     }
 
