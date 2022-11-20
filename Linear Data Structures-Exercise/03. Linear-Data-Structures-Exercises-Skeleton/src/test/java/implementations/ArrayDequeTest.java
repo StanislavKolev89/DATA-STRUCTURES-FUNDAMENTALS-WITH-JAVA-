@@ -12,28 +12,31 @@ public class ArrayDequeTest extends TestCase {
     }
 
     public void testAdd() {
-        this.integers.add(1);
-        this.integers.add(2);
-        this.integers.add(3);
-        this.integers.add(4);
-        this.integers.add(5);
-        this.integers.add(6);
-        this.integers.add(7);
-        this.integers.add(8);
-        this.integers.add(9);
-        this.integers.add(10);
-        this.integers.add(11);
-        this.integers.offer(12);
-        this.integers.offer(13);
-        this.integers.offer(13);
-        this.integers.offer(13);
-        this.integers.offer(13);
-        this.integers.offer(13);
-        this.integers.offer(13);
-        this.integers.offer(13);
-        this.integers.push(12);
-        this.integers.push(13);
-        this.integers.push(14);
+//        this.integers.add(1);
+//        this.integers.add(2);
+//        this.integers.add(3);
+//        this.integers.add(4);
+//        this.integers.add(5);
+//        this.integers.offer(1);
+//        this.integers.offer(2);
+//        this.integers.offer(3);
+//        this.integers.offer(4);
+//        this.integers.offer(5);
+
+        this.integers.addLast(1);
+        this.integers.addLast(2);
+        this.integers.addLast(3);
+        this.integers.addLast(4);
+        this.integers.addLast(5);
+        this.integers.addLast(6);
+        this.integers.addFirst(1);
+        this.integers.addFirst(2);
+        this.integers.addFirst(3);
+        this.integers.addFirst(4);
+        this.integers.addFirst(5);
+        this.integers.addFirst(6);
+
+        System.out.println();
     }
 
     public void testOffer() {

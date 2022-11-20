@@ -45,9 +45,9 @@ public class ArrayDeque<E> implements Deque<E> {
             this.elements[++head] = element;
 
         }
+        size++;
 
     }
-
 
 
     @Override
@@ -69,11 +69,23 @@ public class ArrayDeque<E> implements Deque<E> {
 
     @Override
     public void insert(int index, E element) {
+        if (index < 0 || index > this.head) {
+            throw new IndexOutOfBoundsException();
+        }
+        if (index + this.tail < this.elements.length / 2) {
+            insertAndShiftLeft(index, element);
+        } else {
+            inserAndShiftRight(index, element);
+        }
+
 
     }
 
+
     @Override
     public void set(int index, E element) {
+        checkForValidIndex(index);
+        this.elements[index] = element;
 
     }
 
@@ -87,7 +99,7 @@ public class ArrayDeque<E> implements Deque<E> {
 
     @Override
     public E poll() {
-        if (this.elements[this.head]==null){
+        if (this.elements[this.head] == null) {
             return null;
         }
         E elementAt = getElementAt(this.head);
@@ -98,7 +110,7 @@ public class ArrayDeque<E> implements Deque<E> {
 
     @Override
     public E pop() {
-        if (invalidTailIndex()){
+        if (invalidTailIndex()) {
             return null;
         }
         return null;
@@ -107,13 +119,13 @@ public class ArrayDeque<E> implements Deque<E> {
     @Override
     public E get(int index) {
         checkForValidIndex(index);
-        return getElementAt(this.tail+index);
+        return getElementAt(this.tail + index);
     }
 
     @Override
     public E get(Object object) {
-        for (int i = this.tail; i <=this.head ; i++) {
-            if(this.elements[i].equals(object)){
+        for (int i = this.tail; i <= this.head; i++) {
+            if (this.elements[i].equals(object)) {
                 return getElementAt(i);
             }
         }
@@ -157,7 +169,7 @@ public class ArrayDeque<E> implements Deque<E> {
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return this.size == 0;
     }
 
     @Override
@@ -170,7 +182,7 @@ public class ArrayDeque<E> implements Deque<E> {
         Object[] newArray = new Object[this.capacity() * 2];
         int begin = (newArray.length - this.size) / 2;
 
-        for (int i = 0; i < this.size; i++) {
+        for (int i = tail; i <=head; i++) {
             newArray[i + begin] = this.elements[i];
         }
         this.elements = newArray;
@@ -179,26 +191,52 @@ public class ArrayDeque<E> implements Deque<E> {
         return this.elements;
     }
 
-    private void increaseCapacityIfNeeded() {
+    private boolean increaseCapacityIfNeeded() {
         if (this.head == this.capacity() - 1 || this.tail == 0) {
             this.elements = increaseArray();
+            return true;
         }
+        return false;
     }
+
 
     private E getElementAt(int index) {
         return (E) this.elements[index];
     }
 
     private boolean invalidTailIndex() {
-        if(this.elements[this.tail]==null){
+        if (this.elements[this.tail] == null) {
             return true;
         }
         return false;
     }
 
     private void checkForValidIndex(int index) {
-        if(this.tail- index <0 || this.tail+ index >this.head){
+        if (this.tail - index < 0 || this.tail + index > this.head) {
             throw new IndexOutOfBoundsException("Invalid index, BrAtochka");
         }
+    }
+
+    private void insertAndShiftLeft(int index, E element) {
+        int insertAtIndex = this.tail + index;
+        boolean decreaseTail = increaseCapacityIfNeeded();
+        for (int i = tail; i <insertAtIndex; i++) {
+            this.elements[i - 1] = this.elements[i];
+        }
+        this.elements[insertAtIndex-1] = element;
+
+        this.tail--;
+    }
+
+    private void inserAndShiftRight(int index, E element) {
+        int insertAtIndex = this.tail + index;
+        increaseCapacityIfNeeded();
+        for (int i = head; i >= insertAtIndex; i--) {
+            this.elements[i + 1] = this.elements[i];
+        }
+
+        this.elements[insertAtIndex] = element;
+        this.head++;
+
     }
 }
