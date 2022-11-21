@@ -72,11 +72,8 @@ public class ArrayDeque<E> implements Deque<E> {
         if (index < 0 || index > this.head) {
             throw new IndexOutOfBoundsException();
         }
-        if (index + this.tail < this.elements.length / 2) {
-            insertAndShiftLeft(index, element);
-        } else {
-            inserAndShiftRight(index, element);
-        }
+
+        insertAndShift(index, element);
 
 
     }
@@ -85,7 +82,7 @@ public class ArrayDeque<E> implements Deque<E> {
     @Override
     public void set(int index, E element) {
         checkForValidIndex(index);
-        this.elements[index] = element;
+        this.elements[index+tail] = element;
 
     }
 
@@ -182,7 +179,7 @@ public class ArrayDeque<E> implements Deque<E> {
         Object[] newArray = new Object[this.capacity() * 2];
         int begin = (newArray.length - this.size) / 2;
 
-        for (int i = tail; i <=head; i++) {
+        for (int i = tail; i <= head; i++) {
             newArray[i + begin] = this.elements[i];
         }
         this.elements = newArray;
@@ -212,31 +209,30 @@ public class ArrayDeque<E> implements Deque<E> {
     }
 
     private void checkForValidIndex(int index) {
-        if (this.tail - index < 0 || this.tail + index > this.head) {
+        if (index< 0 || index> this.size) {
             throw new IndexOutOfBoundsException("Invalid index, BrAtochka");
         }
     }
 
-    private void insertAndShiftLeft(int index, E element) {
+    private void insertAndShift(int index, E element) {
         int insertAtIndex = this.tail + index;
-        boolean decreaseTail = increaseCapacityIfNeeded();
-        for (int i = tail; i <insertAtIndex; i++) {
-            this.elements[i - 1] = this.elements[i];
-        }
-        this.elements[insertAtIndex-1] = element;
-
-        this.tail--;
-    }
-
-    private void inserAndShiftRight(int index, E element) {
-        int insertAtIndex = this.tail + index;
-        increaseCapacityIfNeeded();
-        for (int i = head; i >= insertAtIndex; i--) {
-            this.elements[i + 1] = this.elements[i];
+        if (this.capacity() - head <= this.tail) {
+            for (int i = tail; i <=insertAtIndex; i++) {
+                this.elements[i -1 ] = this.elements[i];
+            }
+            this.elements[insertAtIndex] = element;
+            this.tail--;
+        } else {
+            for (int i = head; i >=insertAtIndex; i--) {
+                this.elements[i+1] = this.elements[i];
+            }
+            this.elements[insertAtIndex] = element;
+            this.head++;
         }
 
-        this.elements[insertAtIndex] = element;
-        this.head++;
+        this.size++;
 
     }
+
+
 }
