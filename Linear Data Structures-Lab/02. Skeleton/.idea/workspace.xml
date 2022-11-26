@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ded532aa-8a84-4ff2-a920-946a4f392759" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/implementations/SinglyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implementations/SinglyLinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/implementations/SinglyLinkedListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/implementations/SinglyLinkedListTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/implementations/SinglyLinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/implementations/SinglyLinkedList.class" afterDir="false" />
-    </list>
+    <list default="true" id="ded532aa-8a84-4ff2-a920-946a4f392759" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -148,7 +143,7 @@
       <workItem from="1668457025161" duration="6140000" />
       <workItem from="1668546372493" duration="3252000" />
       <workItem from="1668624116660" duration="2135000" />
-      <workItem from="1668628568873" duration="6607000" />
+      <workItem from="1668628568873" duration="6636000" />
     </task>
     <task id="LOCAL-00001" summary="Stack implementation using Node.">
       <created>1668548307424</created>
@@ -164,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668631120553</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="SinglyLinkedList implementation using Node.">
+      <created>1668635251949</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1668635251949</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,7 +175,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Stack implementation using Node." />
     <MESSAGE value="Queue implementation using Node." />
-    <option name="LAST_COMMIT_MESSAGE" value="Queue implementation using Node." />
+    <MESSAGE value="SinglyLinkedList implementation using Node." />
+    <option name="LAST_COMMIT_MESSAGE" value="SinglyLinkedList implementation using Node." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

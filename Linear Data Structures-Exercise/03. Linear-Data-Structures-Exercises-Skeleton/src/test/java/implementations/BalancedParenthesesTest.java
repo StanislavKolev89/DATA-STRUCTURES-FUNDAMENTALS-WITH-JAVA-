@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 public class BalancedParenthesesTest {
     @Test
     public void zeroTestOne() {
-        String input = "{[()]}";
+        String input = "{[([()])]}";
         Boolean solve = new BalancedParentheses(input).solve();
         assertNotNull(solve);
         assertTrue(solve);
@@ -19,5 +19,13 @@ public class BalancedParenthesesTest {
         Boolean solve = new BalancedParentheses(input).solve();
         assertNotNull(solve);
         assertFalse(solve);
+    }
+
+    @Test
+    public void zeroTestThree() {
+        String input = null;
+        Boolean solve = new BalancedParentheses(input).solve();
+        assertNull(solve);
+
     }
 }

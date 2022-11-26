@@ -12,7 +12,7 @@ public class BalancedParentheses implements Solvable {
     @Override
     public Boolean solve() {
         if(this.parentheses == null){
-            throw new NullPointerException("cannot pass null values");
+           return null;
         }
 
         this.parentheses = this.parentheses.trim();
