@@ -26,7 +26,7 @@ public class ArrayDeque<E> implements Deque<E> {
         increaseCapacityIfNeeded();
 
         if (this.size == 0) {
-            this.elements[head] = element;
+            this.elements[tail] = element;
         } else {
             this.elements[--tail] = element;
 
