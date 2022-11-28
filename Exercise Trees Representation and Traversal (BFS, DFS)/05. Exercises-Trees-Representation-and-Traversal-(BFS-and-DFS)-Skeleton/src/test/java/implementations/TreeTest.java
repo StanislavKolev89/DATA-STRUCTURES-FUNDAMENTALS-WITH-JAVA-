@@ -182,10 +182,11 @@ public class TreeTest {
         };
         TreeFactory treeFactory = new TreeFactory();
         Tree<Integer> tree = treeFactory.createTreeFromStrings(input);
-        List<Tree<Integer>> trees = tree.subTreesWithGivenSum(43);
+        List<Tree<Integer>> trees = tree.subTreesWithGivenSum(63);
         String asString = trees.get(0).getAsString();
-        assertTrue(asString.contains("14"));
-        assertTrue(asString.contains("23"));
-        assertTrue(asString.contains("6"));
+        assertTrue(asString.contains("19"));
+        assertTrue(asString.contains("1"));
+        assertTrue(asString.contains("12"));
+        assertTrue(asString.contains("31"));
     }
 }
