@@ -189,4 +189,20 @@ public class TreeTest {
         assertTrue(asString.contains("12"));
         assertTrue(asString.contains("31"));
     }
+
+    @Test
+    public void testTreeCreation1() {
+        String[] input = {
+                "0 1",
+                "0 2",
+                "1 3"
+        };
+
+        TreeFactory treeFactory = new TreeFactory();
+        Tree<Integer> tree = treeFactory.createTreeFromStrings(input);
+        List<Tree<Integer>> trees = tree.subTreesWithGivenSum(6);
+        assertEquals(1, trees.size());
+    }
+
+
 }
