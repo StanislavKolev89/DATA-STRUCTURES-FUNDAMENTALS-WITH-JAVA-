@@ -42,6 +42,7 @@ public class BinarySearchTreeTest {
     public void testRightSideBST() {
         AbstractBinarySearchTree.Node<Integer> root = bst.getRoot();
 
+
         assertEquals(Integer.valueOf(12), root.value);
 
         AbstractBinarySearchTree.Node<Integer> right = root.rightChild;
@@ -53,6 +54,14 @@ public class BinarySearchTreeTest {
 
         assertEquals(Integer.valueOf(18), right_left.value);
         assertEquals(Integer.valueOf(23), right_right.value);
+    }
+
+
+    @Test
+    public void testTreeContainsValue() {
+        assertTrue(bst.contains(18));
+        assertTrue(bst.contains(21));
+        assertTrue(bst.contains(23));
     }
 
     @Test
